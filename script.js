@@ -173,15 +173,19 @@ let currentIndex = 0;
 
 // Creating Speech function 
  
+
+ function speak() {
  
-/* function speak(text) {
-     const utterance = new SpeechSynthesisUtterance(text);
+       quoteText.textContent = quotation[currentIndex].quote;
+    authorText.textContent = `- ${quotation[currentIndex].author}`;
+    
+     const utterance = new SpeechSynthesisUtterance(`${quoteText.textContent}, ${authorText.textContent}`);
       utterance.rate = 0.9; // speed (0.1–10)
       utterance.pitch = 1;  // normal tone
       speechSynthesis.speak(utterance);
-    };*/
+    };
     
-
+speaker.addEventListener('click', speak);
 
 
 // Logic for Next Quote
@@ -194,7 +198,6 @@ next.addEventListener('click', function(){
     authorText.textContent = `- ${quotation[currentIndex].author}`;
     
 
-  // speak(quoteText.textContent);
       
       });
     
@@ -215,7 +218,6 @@ next.addEventListener('click', function(){
   authorText.textContent = '- John C. Maxwell';
     
     };
-//   speak(quoteText.textContent);
  
 });
  
