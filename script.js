@@ -8,6 +8,7 @@ const prev = document.querySelector('#prev');
 
 const next = document.querySelector('#next');
 
+
 let speaker = document.querySelector('#speaker');
 
 
@@ -53,7 +54,7 @@ let quotation = [
   },
   
   {
-      quote: "Every person who has become successful has simply formed the bahit of doing this things that failures dislike doing and will not do.", author: "John C. Maxwell"
+      quote: "Every person who has become successful has simply formed the habit of doing this things that failures dislike doing and will not do.", author: "John C. Maxwell"
   },
   
   {
@@ -66,13 +67,11 @@ let quotation = [
   },
   
   
-  
   {
       quote: "One-fifth of the people are against everything all the time.",
       
       author: "Robert Kennedy"
   },
-  
   
   
   {
@@ -148,7 +147,7 @@ let quotation = [
   },
   
   {
-      quote: "The richest soil uncultivated produces the rankeat weeds.", author: "Plutarch"
+      quote: "The richest soil uncultivated produces the rankest weeds.", author: "Plutarch"
   },
   
   {
@@ -173,7 +172,7 @@ let currentIndex = 0;
 
 // Creating Speech function 
  
-
+ 
  function speak() {
  
        quoteText.textContent = quotation[currentIndex].quote;
@@ -197,7 +196,12 @@ next.addEventListener('click', function(){
      quoteText.textContent = quotation[currentIndex].quote;
     authorText.textContent = `- ${quotation[currentIndex].author}`;
     
+    if (currentIndex === quotation.length - 1) {
+    return currentIndex = 0;
+        
+    }
 
+  //speak(quoteText.textContent);
       
       });
     
@@ -218,6 +222,14 @@ next.addEventListener('click', function(){
   authorText.textContent = '- John C. Maxwell';
     
     };
+    
+    if (currentIndex === 0) {
+        
+        currentIndex = quotation.length;
+    }
+// speak(quoteText.textContent);
  
 });
+
+
  
